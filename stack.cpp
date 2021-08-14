@@ -33,10 +33,6 @@ int push(int value)
         arr[top]=value;
     }
 }
-int peak()
-{
-    return arr[top];
-}
 int pop()
 {
     if(isEmpty())
