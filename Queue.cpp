@@ -1,3 +1,4 @@
+//For Circular Queue just Uncomment the code lines which are commented
 #include<iostream>
 using namespace std;
 class Queue
@@ -11,7 +12,6 @@ class Queue
         for(int i=0;i<5;i++)
         arr[i]=0;
     }
-//   dequeued<--front    enqueued<-- rear
     bool isEmpty()
     {
         if(front==-1 && rear ==-1)
@@ -21,6 +21,7 @@ class Queue
     }
     bool isFull()
     {
+        //if((rear+1)%5==front)
         if(rear==4)
         return true;
     return false;
@@ -41,6 +42,7 @@ class Queue
             
         }
         else{
+            // rear=(rear+1)%5;
             rear++;
             arr[rear]=val;
         }
@@ -64,6 +66,7 @@ class Queue
             arr[front]=0;
             cout<<"The element Dequeued is "<<x<<endl;
             front++;
+            //front=(front+1)%5;  //5 is size of array 
         }
     }
     void display()
