@@ -2,9 +2,15 @@
 using namespace std;
 class stack
 {
-int top=-1;
-int arr[5]={0,0,0,0,0};
+int top;
+int arr[5];
 public:
+stack()
+{
+    top=-1;
+    for(int i=0;i<5;i++)
+        arr[i]=0;
+}
 bool isEmpty()
 {
     if(top==-1)
@@ -21,12 +27,11 @@ bool isFull()
 return false;
 
 }
-int push(int value)
+void push(int value)
 {
     if(isFull())
     {
         cout<<"stack overflow"<<endl;
-        return 0;
     }
     else{
         top++;
