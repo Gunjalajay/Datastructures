@@ -1,4 +1,4 @@
-//For Circular Queue just Uncomment the code lines which are commented
+//For Circular Queue just Uncomment the code lines which are commented and clear the code lines adjacent to them
 #include<iostream>
 using namespace std;
 class Queue
