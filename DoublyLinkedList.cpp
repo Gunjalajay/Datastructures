@@ -1,3 +1,4 @@
+//Function insertAtTail,InsertAtHead,deletenode,deleteAtHead
 #include <iostream>
 using namespace std;
 class node
