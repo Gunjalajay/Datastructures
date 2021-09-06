@@ -13,6 +13,38 @@ Node(int val)
 
 };
 
+void print(Node* head,Node* last)
+{
+    Node*temp=head;
+    if(head==last)
+    {
+        cout<<head->data<<endl;
+        return;
+    }
+    
+    while(temp->next!=last)
+    {
+        temp=temp->next;
+    }
+    cout<<temp->next->data<<endl;
+    print(head , temp);
+}
+void reversePrint(Node* head)
+{
+    cout<<endl;
+    Node* temp=head;
+    
+    while(temp->next!=NULL)
+    {
+        temp=temp->next;
+    }
+    
+    Node* last=temp;
+  
+    print(head,last);
+    
+}
+
 void insertAthead(Node* &head,int val)
 {
     Node* n=new Node(val);
@@ -70,4 +102,5 @@ int main()
     insertAthead(head,4);
     display(head);
     cout<<search(head,5);
+    reversePrint(head);
 }
