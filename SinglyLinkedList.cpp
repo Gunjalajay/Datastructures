@@ -81,7 +81,26 @@ void insertAtTail(Node* &head,int val)
     }
     temp->next=n;
 }
-
+void getNode(Node* head, int pos_from_tail) {
+    Node* temp=head;
+    int count=1;
+    while(temp->next!=NULL)
+    {
+        count++;
+        temp=temp->next;
+    }
+    // cout<<count<<endl;
+    
+    Node* temp1=head;
+    int count1=1;
+    while((count1+pos)!=count)
+    {
+        temp1=temp1->next;
+        count1++;
+    }
+    cout<<temp1->data;
+    
+}
 void display(Node* head)
 {
     Node* temp=head;
@@ -103,4 +122,5 @@ int main()
     display(head);
     cout<<search(head,5);
     reversePrint(head);
+    getNode(head,2);
 }
