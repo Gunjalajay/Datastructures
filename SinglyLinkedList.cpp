@@ -1,4 +1,4 @@
-//Functions= insertAtNode,insertAtTail,Search,Display
+//Functions= insertAtNode,insertAtTail,Search,Node_value_from_tail,Delete_Duplicates,Display
 #include<iostream>
 using namespace std;
 class Node{
@@ -101,6 +101,32 @@ void getNode(Node* head, int pos_from_tail) {
     cout<<temp1->data;
     
 }
+void deleteDuplicates(Node* &head)
+{
+    Node*temp=head;
+    while(temp->next!=NULL)
+    {
+        if(temp->next->next==NULL && temp->data==temp->next->data)
+        {
+            Node* todelete=temp->next;
+            temp->next=NULL;
+            delete todelete;
+            continue;
+        }
+        
+        if(temp->data==temp->next->data)
+        {
+            Node* todelete=temp->next;
+            temp->next=temp->next->next;
+            delete todelete;
+            continue;
+        }
+        temp=temp->next;
+    }
+    
+    
+}
+
 void display(Node* head)
 {
     Node* temp=head;
@@ -118,9 +144,11 @@ int main()
     insertAtTail(head,1);
     insertAtTail(head,2);
     insertAtTail(head,3);
-    insertAthead(head,4);
+    insertAthead(head,1);
     display(head);
     cout<<search(head,5);
     reversePrint(head);
     getNode(head,2);
+    deleteDuplicates(head);
+    display(head);
 }
