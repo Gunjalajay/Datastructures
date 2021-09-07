@@ -93,7 +93,7 @@ void getNode(Node* head, int pos_from_tail) {
     
     Node* temp1=head;
     int count1=1;
-    while((count1+pos)!=count)
+    while((count1+pos_from_tail)!=count)
     {
         temp1=temp1->next;
         count1++;
