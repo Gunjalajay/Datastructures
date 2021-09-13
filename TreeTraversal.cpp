@@ -2,7 +2,7 @@
 
 #include <iostream>
 using namespace std;
-struct Node
+class Node
 {
     int data;
     Node* left;
@@ -16,7 +16,7 @@ struct Node
     }
 };
 
-void preorder(struct Node* root)            //root left right
+void preorder(Node* root)            //root left right
 {
     if(root==NULL)
     {
@@ -27,7 +27,7 @@ void preorder(struct Node* root)            //root left right
     preorder(root->right);
     
 }
-void inorder(struct Node* root)             //left root right 
+void inorder(Node* root)             //left root right 
 {
     if(root==NULL)
     {return; }
@@ -36,7 +36,7 @@ void inorder(struct Node* root)             //left root right
     cout<<root->data<<" ";
     inorder(root->right);
 }
-void postorder(struct Node* root)           //left right root
+void postorder(Node* root)           //left right root
 {
     if(root==NULL)
     {
@@ -49,7 +49,7 @@ void postorder(struct Node* root)           //left right root
 
 int main()
 {
-    struct Node* root=new Node(1);
+    Node* root=new Node(1);
     root->left=new Node(2);
     root->right=new Node(3);
     root->left->left=new Node(4);
