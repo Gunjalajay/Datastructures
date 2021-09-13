@@ -1,8 +1,9 @@
 // insert elements in Tree, Search element in tree 
 #include <iostream>
 using namespace std;
-struct Node
+class Node
 {
+    public:
     int data;
     Node* left;
     Node* right;
@@ -15,25 +16,29 @@ struct Node
     }
 };
 
-void insert(struct Node* root,int val)
+void insert( Node* root,int val)
 {
     Node* newNode=new Node(val);
     if(root==NULL)
     {
         root=newNode;
     }
+    
     if(val<root->data && root->left!=NULL)
     {
         insert(root->left,val);
     }
+    
     if(val<root->data && root->left==NULL)
     {
         root->left=newNode;
     }
+    
     if(val>root->data && root->right==NULL)
     {
         root->right=newNode;
     }
+    
     if(val>root->data && root->right!=NULL)
     {
         insert(root->right,val);
@@ -74,7 +79,7 @@ bool search(Node* root,int val)
 
 int main()
 {
-    struct Node* root=new Node(5);
+    Node* root=new Node(5);
     insert(root,3);
     insert(root,7);
     insert(root,2);
